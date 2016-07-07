@@ -139,7 +139,6 @@ function drawX(x, y) {
     ctx.translate(-posX, -posY);
 
     table[x][y] = "x";
-    // printTable(table);
     console.log("X-mark at cell (" + x + ", " + y + ")");
 }
 
@@ -157,18 +156,5 @@ function drawO(x, y) {
     ctx.stroke();
 
     table[x][y] = "o";
-    // printTable();
     console.log("O-mark at cell (" + x + ", " + y + ")");
-
-}
-
-function printTable() {
-    var stringToPrint = "";
-    for (var i = 0; i < 8; i++) {
-        for (var j = 0; j < 8; j++) {
-            stringToPrint += table[j][i] + ", ";
-        }
-        console.log(stringToPrint);
-        stringToPrint = "";
-    }
 }
