@@ -23,6 +23,7 @@ var myGameArea = {
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         var me = this.canvas;
+        console.log("Click any cell to begin playing the game. Five in a row wins!");
         this.canvas.addEventListener('mousedown', function (e) {
             var x = e.offsetX;
             var y = e.offsetY;
