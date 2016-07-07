@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+<title>If smth, then art(smt)</title>
+
+<canvas id="myCanvas" width="200" height="100"
+        style="border:1px solid #d3d3d3;">
+    Your browser does not support the canvas element.
+</canvas>
+
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    const pi = Math.PI;
+
+    function drawCircle(x, y, r, start, end) {
+        ctx.beginPath();
+        ctx.arc(x, y, r, start, end);
+        ctx.stroke();
+    }
+
+    function artDraw(x, y, r, start, end, callback) {
+        var i = start, j = start;
+        var k = setInterval(go, 20);
+
+        function go() {
+            drawCircle(x, y, r, j, i);
+            j = i;
+            i += .1;
+            if (j > end){
+                clearInterval(k);
+                if (callback)
+                        callback();
+            }
+        }
+    }
+
+    artDraw(95, 50, 40, 0, 2 * pi, function () {
+        artDraw(80, 45, 7, 0, 2 * pi, function () {
+            artDraw(110, 45, 7, 0, 2 * pi, function () {
+                artDraw(95,55,25,.4,2.74)
+            })
+        })
+    });
+//    artDraw(80, 45, 7, 0, 2 * pi);
+//    artDraw(110, 45, 7, 0, 2 * pi);
+
+//    artDraw(95,55,25,.4,2.74); //smile
+//    artDraw(95, 85, 25, 3.54, 5.88);  //sad
+
+
+</script>
+
+</body>
+</html>

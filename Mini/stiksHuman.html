@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<body>
+<title>If smth, then art(smt)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<canvas id="myCanvas" width="200" height="300"
+        style="border:1px solid #d3d3d3;">
+    Your browser does not support the canvas element.
+</canvas>
+
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    const pi = Math.PI;
+    var pos = 2.5;
+    var increment = -.02;
+
+    function drawCircle(x, y, r, start, end) {
+        ctx.beginPath();
+        ctx.arc(x, y, r, start, end);
+        ctx.stroke();
+    }
+
+
+    function drawHuman() {
+        ctx.clearRect(0,0,200,300);
+        ctx.lineWidth = 3;
+        drawCircle(95, 50, 40, 0, 2 * pi);
+        drawCircle(80, 45, 7, 0, 2 * pi);
+        drawCircle(110, 45, 7, 0, 2 * pi);
+        drawCircle(95,55,25,.4,2.74);
+//    drawCircle(95,55,25,.4,2.74); //smile
+//    drawCircle95, 85, 25, 3.54, 5.88);  //sad
+        ctx.moveTo(95,90);
+        ctx.lineTo(95,190);
+        ctx.lineTo(140,270);
+        ctx.moveTo(95,190);
+        ctx.lineTo(50,270);
+        ctx.stroke();
+    }
+
+    function drawHands() {
+        drawHuman();
+        ctx.translate(95,105);
+        ctx.beginPath();
+        ctx.lineWidth = 3;
+        ctx.lineCap = "round";
+        ctx.moveTo(0,0);
+        ctx.rotate(pos);
+        ctx.lineTo(0, -80);
+        ctx.rotate(-pos);
+        ctx.moveTo(0,0);
+        ctx.rotate(-pos);
+        ctx.lineTo(0, -80);
+        ctx.rotate(pos);
+        ctx.stroke();
+        ctx.translate(-95,-105);
+        pos += increment;
+        if(pos<=1)increment=.02;
+        if(pos>=2.5)increment=-.02;
+    }
+
+//    drawHuman();
+
+    var lut = setInterval(drawHands,10);
+//    drawHands();
+
+</script>
+
+</body>
+</html>
