@@ -1,13 +1,13 @@
 var turn = "x";  //specifies who's turn is now
 var table = [
-    ["", "", "", "", "", "", "", "",],
-    ["", "", "", "", "", "", "", "",],
-    ["", "", "", "", "", "", "", "",],
-    ["", "", "", "", "", "", "", "",],
-    ["", "", "", "", "", "", "", "",],
-    ["", "", "", "", "", "", "", "",],
-    ["", "", "", "", "", "", "", "",],
-    ["", "", "", "", "", "", "", "",],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""],
+    ["", "", "", "", "", "", "", ""]
 ]; //initialize the grid table
 
 var marked = [];
@@ -60,7 +60,7 @@ function drawGrid() {
     }
 
     //vertical lines
-    for (var i = 0; i < 8; i++) {
+    for (i = 0; i < 8; i++) {
         ctx.moveTo(i * width, 0);
         ctx.lineTo(i * width, 8 * height);
     }
@@ -71,7 +71,7 @@ function drawGrid() {
 
 function checkDirection(x, y, n1, n2) {
     // x, y - the coordinates of the current cell
-    // n1, n2 - specify the direction (may only have the values "-1", "0" and "1")
+    // n1, n2 - specify the direction (may only have values "-1", "0" and "1")
     var r = 0;
     if (x + n1 >= 0 && x + n1 < 8 && y + n2 >= 0 && y + n2 < 8) {
         if (table[x + n1][y + n2] == table[x][y]) {
@@ -86,20 +86,20 @@ function checkDirection(x, y, n1, n2) {
 
 function printMarked(winner) {
     var l = marked.length;
+    myGameArea.context.lineWidth = 10;
+    myGameArea.context.lineCap = "round";
     if (winner == "x") {
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < l; i++) {
             drawX(marked[i][0], marked[i][1], "red");
         }
     }
     if (winner == "o") {
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < l; i++) {
             drawO(marked[i][0], marked[i][1], "red");
         }
     }
 }
 function wins(winner) {
-    myGameArea.context.lineWidth = 10;
-    myGameArea.context.lineCap = "round";
     printMarked(winner);
     turn = "0";
     console.log("Player " + winner.toUpperCase() + " wins!!!");
@@ -115,19 +115,24 @@ function checkNeighbours(x, y) {
     if (c >= 5) console.log(c + " - on left diagonal");
 
     if (c < 5) {
-
+        marked = [];
+        marked.push([x, y]);
         c = 1;
         c += checkDirection(x, y, 0, -1);
         c += checkDirection(x, y, 0, 1);
         if (c >= 5) console.log(c + " - vertically");
     }
     if (c < 5) {
+        marked = [];
+        marked.push([x, y]);
         c = 1;
         c += checkDirection(x, y, 1, -1);
         c += checkDirection(x, y, -1, 1);
         if (c >= 5) console.log(c + " - on right diagonal");
     }
     if (c < 5) {
+        marked = [];
+        marked.push([x, y]);
         c = 1;
         c += checkDirection(x, y, -1, 0);
         c += checkDirection(x, y, 1, 0);
