@@ -1,4 +1,4 @@
-var turn = "x";  //specifies who's turn is now
+var turn = "x";  //tracks who's turn is now
 var table = [
     ["", "", "", "", "", "", "", ""],
     ["", "", "", "", "", "", "", ""],
@@ -77,7 +77,7 @@ function checkDirection(x, y, n1, n2) {
         if (table[x + n1][y + n2] == table[x][y]) {
             marked.push([x + n1, y + n2]);
             r++;
-            if (r == 4) return r;
+            // if (r == 4) return r;
             r += checkDirection(x + n1, y + n2, n1, n2)
         }
     }
@@ -94,7 +94,7 @@ function printMarked(winner) {
         }
     }
     if (winner == "o") {
-        for (var i = 0; i < l; i++) {
+        for (i = 0; i < l; i++) {
             drawO(marked[i][0], marked[i][1], "red");
         }
     }
@@ -102,6 +102,7 @@ function printMarked(winner) {
 function wins(winner) {
     printMarked(winner);
     turn = "0";
+    document.getElementById("panel").innerHTML="Player " + winner.toUpperCase() + " wins!!! </br> Press F5 to restart";
     console.log("Player " + winner.toUpperCase() + " wins!!!");
 }
 function checkNeighbours(x, y) {
@@ -139,17 +140,20 @@ function checkNeighbours(x, y) {
         if (c >= 5) console.log(c + " - horizontally");
     }
 
-    if (c == 5) wins(table[x][y]);
+    if (c >= 5) wins(table[x][y]);
 }
 
 function draw(x, y) {
     if (turn == "x") {
         drawX(x, y);
         turn = "o";
+        document.getElementById("panel").innerHTML="Turn: O";
     }
     else if (turn == "o") {
         drawO(x, y);
         turn = "x";
+        document.getElementById("panel").innerHTML="Turn: X";
+
     }
     checkNeighbours(x, y);
 }
