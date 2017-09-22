@@ -14,3 +14,6 @@ Open console to check game logs.
 TODO: 
   - Play online from different computers
   - AI bot for singe people
+
+###[Buttons Calculator](https://)
+This will soon be a calculator like Google's online calculator using buttons ;)
