@@ -1,8 +1,24 @@
 #calculator {
-    width: 200;
-
+    width: 200px;
+    border: solid 3px red;
 }
 
 #display {
+    border: solid 2px blue;
+    width: 98%;
+    text-align: right;
+}
 
+#button-area {
+    border: solid 2px blue;
+    display: block;
+}
+
+.button {
+    background-color: aqua;
+    width: 40px;
+    height: 30px;
+    margin: 3px;
+    padding: 0;
+    border: 1px solid blue;
 }

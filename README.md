@@ -16,4 +16,9 @@ TODO:
   - AI bot for singe people
 
 ###[Buttons Calculator](https://)
-This will soon be a calculator like Google's online calculator using buttons ;)
+The dumbest calculator with buttons ever.
+At this stage only performs addition.
+Only number buttons and "+" and "=" are active.
+Other functionalities are to be added.
+For any ideas please comment.
+Stay tuned for improvements!
