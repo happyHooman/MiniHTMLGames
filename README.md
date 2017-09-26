@@ -15,10 +15,14 @@ TODO:
   - Play online from different computers
   - AI bot for singe people
 
-###[Buttons Calculator](https://)
+###[Buttons Calculator](https://rawgit.com/happyHooman/MiniHTMLGames/master/ButtonsCalculator/index.html)
 The dumbest calculator with buttons ever.
 At this stage only performs addition.
 Only number buttons and "+" and "=" are active.
 Other functionalities are to be added.
 For any ideas please comment.
 Stay tuned for improvements!
+
+TODO:
+ - Bootstrap )
+ - make other operations work properly

@@ -1,8 +1,14 @@
 var displayValue = document.getElementById("display");
-var firstNumber, secondNumber;
+var firstNumber = 0,
+    secondNumber = 0;
 
 function clickedOn(tasta){
-    displayValue.value += tasta;
+    if(displayValue.value==0){
+        displayValue.value = tasta;
+    }
+    else {
+        displayValue.value += tasta;
+    }
 }
 
 function addNumbers(){
