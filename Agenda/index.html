@@ -3,31 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Agenda</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
 <div id="content">
+    <form action="#" id="contact-form">
+        <input type="text" placeholder="Nume">
+        <input type="text" placeholder="Prenume">
+        <input type="text" placeholder="Telefon">
+        <button>Add</button>
+    </form>
+
     <table id="contacts-list">
+        <thead>
         <tr>
             <th>Nume</th>
             <th>Prenume</th>
             <th>Telefon</th>
         </tr>
-        <tr>
-            <td>Tornea</td>
-            <td>Alexandru</td>
-            <td>069000001</td>
-        </tr>
-        <tr>
-            <td>Matei</td>
-            <td>Nicolae</td>
-            <td>069000002</td>
-        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
     </table>
 </div>
 
-<script src="functions.js"></script>
+<script src="jquery-3.2.1.js" type="text/javascript"></script>
+<script src="functions.js" type="text/javascript"></script>
 
 </body>
 </html>
