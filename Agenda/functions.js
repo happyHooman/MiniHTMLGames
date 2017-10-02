@@ -1,10 +1,17 @@
 function getRow(firstName, lastName, phone) {
-    var row = '<tr><td>' + firstName + '</td><td>' + lastName + '</td><td>' + phone + '</td></tr>';
-    return row;
+    return '<tr><td>' + firstName + '</td><td>' + lastName + '</td><td>' + phone + '</td></tr>';
 }
 
 var contacte = [
-
+    ['Matei', 'Nicolae', '01'],
+    ['Tornea', 'Alexandru', '02'],
+    ['Bond', 'James', '03']
 ];
+var tableContent = '';
 
-$('#contacts-list tbody').html(getRow('Tornea', 'Alexandru', '069000001'));
+contacte.forEach(function (contact) {
+    tableContent += getRow(contact[0], contact[1], contact[2]);
+}
+);
+
+$('#contacts-list tbody').html(tableContent);
