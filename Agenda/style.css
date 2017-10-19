@@ -32,3 +32,20 @@
 #contacts-list th {
     font-weight: bold;
 }
+
+#contacts-list .actions a {
+    text-decoration: none;
+    font-size: 12px;
+}
+
+#contacts-list .actions span {
+    display: none;
+    color: blue;
+}
+#contacts-list .actions span:hover {
+    color: red;
+}
+
+#contacts-list tr:hover .actions span {
+    display: inline;
+}
