@@ -19,7 +19,10 @@ function createRow(contact) {
     tableContent += getRow(contact);
 }
 
-$.ajax('date/contacte.json').done(function (contacte) {
+$.ajax('date/contacte.json', {
+    cache : false,
+    dataType: 'json'
+}).done(function (contacte) {
         contacte.forEach(createRow);
         $('#contacts-list tbody').html(tableContent);
         $('.edit').click(function () {
@@ -34,6 +37,3 @@ function editContacts(firstName, lastName, phone) {
     $('input[name=phone]').val(phone);
 }
 
-$('.edit').click(function () {
-    editContacts('Tornea', 'Alexandru', '05')
-});
