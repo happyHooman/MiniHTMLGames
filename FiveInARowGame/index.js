@@ -9,9 +9,9 @@ var props = {
 
 // initialize table
 var table = [];
-for (var i=0; i<props.rows;i++){
+for (var i = 0; i < props.rows; i++) {
     table.push([]);
-    for(var j=0; j<props.columns; j++){
+    for (var j = 0; j < props.columns; j++) {
         table[i].push("");
     }
 }
@@ -98,12 +98,14 @@ function printMarked(winner) {
         }
     }
 }
+
 function wins(winner) {
     printMarked(winner);
     turn = "0";
-    document.getElementById("panel").innerHTML="Player " + winner.toUpperCase() + " wins!!! </br> Press F5 to restart";
+    document.getElementById("panel").innerHTML = "Player " + winner.toUpperCase() + " wins!!! </br> Press F5 to restart";
     console.log("Player " + winner.toUpperCase() + " wins!!!");
 }
+
 function checkNeighbours(x, y) {
     var c = 1;
 
@@ -146,12 +148,12 @@ function draw(x, y) {
     if (turn == "x") {
         drawX(x, y);
         turn = "o";
-        document.getElementById("panel").innerHTML="Turn: O";
+        document.getElementById("panel").innerHTML = "Turn: O";
     }
     else if (turn == "o") {
         drawO(x, y);
         turn = "x";
-        document.getElementById("panel").innerHTML="Turn: X";
+        document.getElementById("panel").innerHTML = "Turn: X";
 
     }
     checkNeighbours(x, y);
