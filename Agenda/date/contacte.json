@@ -15,18 +15,6 @@
     "id": 3,
     "firstName": "James",
     "lastName": "Bond",
-    "phone": "03"
-  },
-  {
-    "id": 6,
-    "firstName": "Vasilache",
-    "lastName": "Dina",
-    "phone": "05"
-  },
-  {
-    "id": 7,
-    "firstName": "Jora",
-    "lastName": "Cardan",
-    "phone": "06"
+    "phone": "04"
   }
 ]

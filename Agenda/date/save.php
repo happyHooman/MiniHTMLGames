@@ -3,7 +3,7 @@ $string = file_get_contents("contacte.json");
 $contacte = json_decode($string, true);
 
 
-if (isset($_GET["id"])) {
+if (isset($_POST['id']) && $_POST['id'] != ""){
 
     $id = $_GET["id"];
 

@@ -8,7 +8,7 @@ function getRow(contact) {
         '<td>' + lastName + '</td>' +
         '<td>' + phone + '</td>' +
         '<td class="actions">' +
-        '<span><a class="remove" href="date/remove.php?id=' + id + '">&#x2716</a></span> ' +
+        '<span><a class="remove" href="date/remove-db.php?id=' + id + '">&#x2716</a></span> ' +
         '<span><a class="edit" href="#" data-id="' + id + '">&#x270E</a></span>' +
         '</td></tr>';
 }
@@ -19,7 +19,7 @@ function createRow(contact) {
     tableContent += getRow(contact);
 }
 
-$.ajax('date/contacte.json', {
+$.ajax('date/list.php', {
     cache: false,
     dataType: 'json'
 }).done(function (contacte) {
